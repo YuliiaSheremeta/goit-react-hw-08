@@ -1,0 +1,53 @@
+.user {
+    width: 70px;
+    height: 60px;
+
+}
+
+.form {
+
+    margin-bottom: 50px;
+    margin-left: 30px;
+    width: 400px;
+    background-color: #585656;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+}
+
+.button {
+    border-radius: 4px;
+    width: 140px;
+    background-color: #3e41d1;
+    color: white;
+    text-align: center;
+    margin: 20px;
+    cursor: pointer;
+    border: none;
+
+}
+
+.button:hover,
+.button:focus {
+    background-color: #ea3642;
+}
+
+.label {
+    margin-bottom: 8px;
+}
+
+.error {
+    color: rgb(231, 155, 111);
+}
+
+.input {
+    border-radius: 4px;
+    height: 25px;
+}

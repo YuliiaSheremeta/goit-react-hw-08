@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+
+    margin-left: 30px;
+    width: 370px;
+    padding: 15px;
+    color: white;
+
+    width: 410px;
+}
+
+.label {
+    margin-bottom: 10px;
+}
+
+.input {
+    height: 25px;
+    border-radius: 4px;
+    background-color: rgb(213, 218, 218);
+}
