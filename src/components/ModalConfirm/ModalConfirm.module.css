@@ -1,0 +1,33 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    min-width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button {
+    padding: 8px 16px;
+    width: 80px;
+    cursor: pointer;
+}

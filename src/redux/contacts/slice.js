@@ -12,6 +12,9 @@ const slice = createSlice({
         error: null,
         isFormVisible: false,
         isSearchVisible: false,
+        isConfirmModalOpen: false,
+        contactToDelete: null,
+        
     }, reducers: {
         toggleFormVisibility(state) {
       state.isFormVisible = !state.isFormVisible;
@@ -24,6 +27,14 @@ const slice = createSlice({
         },
         hideSearch(state) {
             state.isSearchVisible = false;
+        },
+        openConfirmModal(state,action) {
+            state.isConfirmModalOpen = true;
+            state.contactToDelete = action.payload;
+        },
+        closeConfirmModal(state){
+            state.isConfirmModalOpen = false;
+            state.contactToDelete = null;
         },
     },
         
@@ -56,6 +67,6 @@ const slice = createSlice({
     
 }
 );
-export const { toggleFormVisibility, toggleSearchVisibility,hideForm,hideSearch } = slice.actions;
+export const { toggleFormVisibility, toggleSearchVisibility,hideForm,hideSearch,openConfirmModal,closeConfirmModal } = slice.actions;
 export default slice.reducer;
 
