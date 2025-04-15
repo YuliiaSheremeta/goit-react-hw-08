@@ -1,6 +1,6 @@
-import { createSelector, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { fetchContacts, addContact, deleteContact } from '../contacts/operations';
-import { selectNameFilter } from '../filters/selectors';
+
 
 
 const slice = createSlice({
@@ -17,7 +17,13 @@ const slice = createSlice({
     },
         toggleSearchVisibility(state) {
       state.isSearchVisible = !state.isSearchVisible;
-    },
+        },
+        hideForm(state) {
+            state.isFormVisible = false;
+        },
+        hideSearch(state) {
+            state.isSearchVisible = false;
+        },
     },
         
     extraReducers: (builder) => {
@@ -47,6 +53,6 @@ const slice = createSlice({
     
 }
 );
-export const { toggleFormVisibility, toggleSearchVisibility } = slice.actions;
+export const { toggleFormVisibility, toggleSearchVisibility,hideForm,hideSearch } = slice.actions;
 export default slice.reducer;
 

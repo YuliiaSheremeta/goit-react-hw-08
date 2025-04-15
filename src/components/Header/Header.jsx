@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../redux/auth/slice';
 
+
 export default function Header() {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
@@ -11,7 +12,7 @@ export default function Header() {
       <nav>
         {!isLoggedIn ? (
           <>
-            <Link to="/register">Sign Up</Link>
+            <Link to="/register">Register</Link>
             <Link to="/login">Login</Link>
           </>
         ) : (

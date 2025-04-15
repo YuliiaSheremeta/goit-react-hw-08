@@ -5,7 +5,7 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import { fetchContacts } from '../../redux/contacts/operations';
 import { selectLoading, selectError,selectIsFormVisible,selectIsSearchVisible,selectContacts } from '../../redux/contacts/selectors';
-import { toggleFormVisibility, toggleSearchVisibility } from '../../redux/contacts/slice';
+import { toggleFormVisibility, toggleSearchVisibility,hideForm,hideSearch } from '../../redux/contacts/slice';
 import { VscSearch } from "react-icons/vsc";
 import { HiMiniUserPlus } from "react-icons/hi2";
 import { NavLink } from 'react-router-dom';
@@ -22,6 +22,14 @@ export default function ContactsPage() {
   const isFormVisible = useSelector(selectIsFormVisible);
   const isSearchVisible = useSelector(selectIsSearchVisible);
 
+  const handleToggleSearch = () => {
+    dispatch(toggleSearchVisibility());
+    dispatch(hideForm());
+  }
+  
+  const handleToggleForm = () => {
+    dispatch(toggleFormVisibility());
+    dispatch(hideSearch());  }
   
   useEffect(() => {
     dispatch(fetchContacts());
@@ -31,11 +39,13 @@ export default function ContactsPage() {
     <main className={css.main}>
       <div className={css.container}>
         <p className={css.title}>Your contacts</p>
-         <NavLink className={css.link} onClick={() => dispatch(toggleSearchVisibility())}> <VscSearch className={ css.search} /> </NavLink>
-        <NavLink className={css.link} onClick={() => dispatch(toggleFormVisibility())}> <HiMiniUserPlus className={css.user } /> </NavLink>
+         <NavLink className={css.link} onClick={handleToggleSearch}> <VscSearch className={ css.search} /> </NavLink>
+       <button className={css.fab} onClick={handleToggleForm}>
+  <HiMiniUserPlus className={css.fabIcon} />
+</button>
       </div>
-      {isFormVisible && <ContactForm />}
-      {isSearchVisible && <SearchBox />}
+      {isFormVisible && <div className={css.fadeIn}><ContactForm /></div>}
+      {isSearchVisible && <div className={css.fadeIn}><SearchBox /></div>}
 
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error occurred, please try again...</p>}

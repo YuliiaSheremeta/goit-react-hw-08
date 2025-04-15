@@ -1,22 +1,45 @@
 .container {
+    max-width: 500px;
+    margin: 0 auto 24px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
-
-    margin-left: 30px;
-    width: 370px;
-    padding: 15px;
-    color: white;
-
-    width: 410px;
+    gap: 8px;
+    animation: fadeIn 0.3s ease-in-out;
 }
 
 .label {
-    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .input {
-    height: 25px;
-    border-radius: 4px;
-    background-color: rgb(213, 218, 218);
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: inherit;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #007aff;
+    box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.15);
+}
+
+/* Анімація */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
