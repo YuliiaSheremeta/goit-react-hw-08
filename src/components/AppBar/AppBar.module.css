@@ -1,3 +1,4 @@
+/* === Базові стилі === */
 .header {
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.8);
@@ -7,15 +8,18 @@
     top: 0;
     z-index: 999;
 }
-.container{
-    width: 1440px;
+
+.container {
+    max-width: 1440px;
     margin: 0 auto;
-    padding:  12px 24px;
+    padding: 12px 24px;
 }
+
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .left,
@@ -24,7 +28,6 @@
     align-items: center;
     gap: 16px;
 }
-
 
 button {
     background-color: #007aff;
@@ -46,3 +49,52 @@ button:hover {
 button:active {
     transform: scale(0.97);
 }
+
+/* === Медіа-запити === */
+
+/* Мобільні пристрої: до 600px */
+@media (max-width: 600px) {
+    .container {
+        padding: 8px 16px;
+    }
+
+    .nav {
+        flex-direction: row;
+        /* Залишається горизонтальним */
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .left,
+    .right {
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Планшети: 601px – 1024px */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        padding: 10px 20px;
+    }
+
+    .left, .right {
+        gap: 12px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 7px 13px;
+    }
+}
+

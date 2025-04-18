@@ -1,27 +1,222 @@
-.title {
-    font-size: 36px;
-    font-weight: 700;
+/* Загальний контейнер для сторінки */
+.container {
     text-align: center;
-    margin-top: 30px;
-    color: #222;
-}
-
-.subtitle {
-    font-size: 18px;
-    text-align: center;
-    color: #555;
-    margin-bottom: 24px;
-}
-
-.features {
-    max-width: 400px;
-    margin: 0 auto 32px;
-    padding: 0;
-    list-style: none;
+    padding: 5vw 5%;
+    /* Використовуємо відсотки для гнучких відступів */
+    background-color: #f9f9f9;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    color: #444;
-    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    /* Щоб відступи не виходили за межі контейнера */
 }
 
+/* Заголовок */
+.title {
+    font-size: 6vw;
+    /* Відсотковий розмір шрифту */
+    color: #333;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Підзаголовок */
+.subtitle {
+    font-size: 4vw;
+    /* Використовуємо відсоткові одиниці для зменшення шрифтів на малих екранах */
+    color: #666;
+    margin-bottom: 3vw;
+    max-width: 80%;
+    /* Обмежуємо ширину */
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Стилі для списку з функціями */
+.featuresContainer {
+    background-color: #fff;
+    border-radius: 1.5rem;
+    padding: 5vw 5%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    animation: slideUp 1s ease-out;
+}
+
+.featuresTitle {
+    font-size: 5vw;
+    /* Зменшуємо шрифт для маленьких екранів */
+    margin-bottom: 1.5rem;
+    color: #007aff;
+}
+
+/* Список функцій */
+.features {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 3.5vw;
+    /* Відсотковий розмір шрифтів для елементів списку */
+    color: #444;
+    line-height: 1.8;
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: flex-start;
+    /* Вирівнюємо елементи списку по лівому краю */
+}
+
+.features li {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    width: 100%;
+    /* Забезпечуємо, щоб елементи списку не виходили за межі контейнера */
+    justify-content: flex-start;
+    /* Вирівнюємо контент по лівому краю */
+}
+
+.features li i {
+    font-size: 2em;
+    /* Збільшуємо іконки для зручності */
+    color: #007aff;
+}
+
+/* Кнопка CTA */
+.ctaContainer {
+    margin-top: 5vw;
+}
+
+.ctaButton {
+    background-color: #007aff;
+    color: white;
+    padding: 2vw 8%;
+    font-size: 4vw;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ctaButton:hover {
+    background-color: #005ecb;
+}
+
+.ctaButton:focus {
+    outline: none;
+    box-shadow: 0 0 5px 3px rgba(0, 122, 255, 0.5);
+}
+
+/* Анімації */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Адаптивність: планшети та мобільні пристрої */
+@media (max-width: 1024px) {
+    .container {
+        padding: 5vw 7%;
+    }
+
+    .title {
+        font-size: 7vw;
+    }
+
+    .subtitle {
+        font-size: 5vw;
+    }
+
+    .featuresTitle {
+        font-size: 5vw;
+    }
+
+    .features li {
+        font-size: 3.5vw;
+    }
+
+    .ctaButton {
+        font-size: 5vw;
+        padding: 2vw 10%;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 8vw;
+    }
+
+    .subtitle {
+        font-size: 6vw;
+    }
+
+    .featuresContainer {
+        padding: 5vw 6%;
+    }
+
+    .featuresTitle {
+        font-size: 6vw;
+    }
+
+    .features li {
+        font-size: 4vw;
+    }
+
+    .ctaButton {
+        font-size: 6vw;
+        padding: 3vw 12%;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        padding: 5vw 5%;
+    }
+
+    .title {
+        font-size: 9vw;
+       
+    }
+
+    .subtitle {
+        font-size: 7vw;
+    }
+
+    .featuresContainer {
+        padding: 5vw;
+        width: 90%;
+    }
+
+    .featuresTitle {
+        font-size: 7vw;
+    }
+
+    .features li {
+        font-size: 5vw;
+    }
+
+    .ctaButton {
+        font-size: 8vw;
+        padding: 4vw 10%;
+    }
+}
