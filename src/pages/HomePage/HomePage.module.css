@@ -1,8 +1,7 @@
-/* Загальний контейнер для сторінки */
 .container {
     text-align: center;
     padding: 5vw 5%;
-    /* Використовуємо відсотки для гнучких відступів */
+   
     background-color: #f9f9f9;
     min-height: 100vh;
     display: flex;
@@ -15,8 +14,8 @@
 
 /* Заголовок */
 .title {
-    font-size: 6vw;
-    /* Відсотковий розмір шрифту */
+    font-size: clamp(2rem, 6vw, 5rem);
+    /* Від 2rem до 5rem в залежності від розміру екрану */
     color: #333;
     margin-bottom: 1.5rem;
     animation: fadeIn 1s ease-in-out;
@@ -24,12 +23,11 @@
 
 /* Підзаголовок */
 .subtitle {
-    font-size: 4vw;
-    /* Використовуємо відсоткові одиниці для зменшення шрифтів на малих екранах */
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    /* Від 1.2rem до 2rem в залежності від розміру екрану */
     color: #666;
     margin-bottom: 3vw;
     max-width: 80%;
-    /* Обмежуємо ширину */
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
 }
@@ -46,8 +44,8 @@
 }
 
 .featuresTitle {
-    font-size: 5vw;
-    /* Зменшуємо шрифт для маленьких екранів */
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    /* Від 1.5rem до 3rem */
     margin-bottom: 1.5rem;
     color: #007aff;
 }
@@ -56,8 +54,8 @@
 .features {
     list-style-type: none;
     padding-left: 0;
-    font-size: 3.5vw;
-    /* Відсотковий розмір шрифтів для елементів списку */
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    /* Від 1rem до 1.5rem */
     color: #444;
     line-height: 1.8;
     margin-top: 2vw;
@@ -65,7 +63,6 @@
     flex-direction: column;
     gap: 2vw;
     align-items: flex-start;
-    /* Вирівнюємо елементи списку по лівому краю */
 }
 
 .features li {
@@ -73,14 +70,12 @@
     align-items: center;
     gap: 2vw;
     width: 100%;
-    /* Забезпечуємо, щоб елементи списку не виходили за межі контейнера */
     justify-content: flex-start;
-    /* Вирівнюємо контент по лівому краю */
 }
 
 .features li i {
-    font-size: 2em;
-    /* Збільшуємо іконки для зручності */
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    /* Від 1.2rem до 2rem */
     color: #007aff;
 }
 
@@ -93,7 +88,8 @@
     background-color: #007aff;
     color: white;
     padding: 2vw 8%;
-    font-size: 4vw;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    /* Від 1rem до 1.5rem */
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -110,7 +106,7 @@
     box-shadow: 0 0 5px 3px rgba(0, 122, 255, 0.5);
 }
 
-/* Анімації */
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -140,34 +136,36 @@
     }
 
     .title {
-        font-size: 7vw;
+        font-size: clamp(1.8rem, 7vw, 4rem);
+        /* Від 1.8rem до 4rem */
     }
 
     .subtitle {
-        font-size: 5vw;
+        font-size: clamp(1.2rem, 5vw, 2rem);
     }
 
     .featuresTitle {
-        font-size: 5vw;
+        font-size: clamp(1.2rem, 5vw, 2.5rem);
     }
 
     .features li {
-        font-size: 3.5vw;
+        font-size: clamp(1rem, 3.5vw, 1.5rem);
     }
 
     .ctaButton {
-        font-size: 5vw;
+        font-size: clamp(1.2rem, 5vw, 1.2rem);
         padding: 2vw 10%;
     }
 }
 
 @media (max-width: 600px) {
     .title {
-        font-size: 8vw;
+        font-size: clamp(1.6rem, 8vw, 3.5rem);
+        /* Від 1.6rem до 3.5rem */
     }
 
     .subtitle {
-        font-size: 6vw;
+        font-size: clamp(1.2rem, 6vw, 2rem);
     }
 
     .featuresContainer {
@@ -175,31 +173,31 @@
     }
 
     .featuresTitle {
-        font-size: 6vw;
+        font-size: clamp(1.4rem, 6vw, 2.5rem);
     }
 
     .features li {
-        font-size: 4vw;
+        font-size: clamp(1rem, 4vw, 1.2rem);
     }
 
     .ctaButton {
-        font-size: 6vw;
+        font-size: clamp(1.2rem, 6vw, 1.5rem);
         padding: 3vw 12%;
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 330px) {
     .container {
         padding: 5vw 5%;
     }
 
     .title {
-        font-size: 9vw;
-       
+        font-size: clamp(1.4rem, 9vw, 2.8rem);
+        /* Від 1.4rem до 2.8rem */
     }
 
     .subtitle {
-        font-size: 7vw;
+        font-size: clamp(1.1rem, 7vw, 2rem);
     }
 
     .featuresContainer {
@@ -208,15 +206,15 @@
     }
 
     .featuresTitle {
-        font-size: 7vw;
+        font-size: clamp(1.4rem, 7vw, 2.5rem);
     }
 
     .features li {
-        font-size: 5vw;
+        font-size: clamp(1rem, 5vw, 1.3rem);
     }
 
     .ctaButton {
-        font-size: 8vw;
+        font-size: clamp(1.2rem, 8vw, 1.5rem);
         padding: 4vw 10%;
     }
 }
